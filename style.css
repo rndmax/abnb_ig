@@ -1,0 +1,47 @@
+.border-rounded-left-tb {
+	border-top-left-radius: 0.8rem;
+	border-bottom-left-radius: 0.8rem;
+}
+
+.border-rounded-right-t {
+	border-top-right-radius: 0.8rem;
+}
+
+.border-rounded-right-b {
+	border-bottom-right-radius: 0.8rem;
+}
+
+.wrap-img-full {
+	height: calc(60vh - 64px);
+}
+
+.wrap-img-half {
+	height: 50%;
+}
+
+.img-first {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	vertical-align: bottom;
+}
+
+.img-pos-left {
+	object-position: left;
+}
+
+img {
+	transition: filter 0.5s, opacity 0.5s;
+}
+
+img:hover {
+	filter: brightness(0.8);
+	/* opacity: 0.5; */
+	cursor: pointer;
+}
+
+.show-all-photos {
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+}

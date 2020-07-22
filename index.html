@@ -8,68 +8,32 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="skeleton.css">
 
     <title>Airbnb gallery</title>
-
-    <style>
-        .border-rounded-left-tb {
-            border-top-left-radius: .8rem;
-            border-bottom-left-radius: .8rem;
-        }
-        
-        .border-rounded-right-t {
-            border-top-right-radius: .8rem;
-        }
-        
-        .border-rounded-right-b {
-            border-bottom-right-radius: .8rem;
-        }
-        
-        .wrap-img-full {
-            height: calc(60vh - 64px);
-        }
-        
-        .wrap-img-half {
-            height: 50%;
-        }
-        
-        .img-first {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            vertical-align: bottom;
-        }
-        
-        .img-pos-left {
-            object-position: left;
-        }
-        
-        img {
-            transition: filter 0.5s, opacity 0.5s;
-        }
-        
-        img:hover {
-            filter: brightness(.8);
-            /* opacity: 0.5; */
-            cursor: pointer;
-        }
-    </style>
 </head>
 
 <body>
 
-    <div class="container mt-5">
+    <div class="skeleton" id="sk"></div>
+
+    <div class="container mt-5" style="display: none;" id="cn">
         <div class="row">
             <div class="col-6 p-0 pl-1 wrap-img-full">
-                <img class="border-rounded-left-tb img-first img-pos-left" alt="Responsive image" src="1.jpg">
+                <img class="border-rounded-left-tb img-first img-pos-left" alt="Responsive image" src="img/1.jpg">
             </div>
             <div class="col-sm pl-2 pr-0 wrap-img-full">
-                <div class="wrap-img-half"><img class="img-first" alt="Responsive image" src="2.jpg"></div>
-                <div class="pt-2 wrap-img-half"><img class="img-first" alt="Responsive image" src="3.jpg"></div>
+                <div class="wrap-img-half"><img class="img-first" alt="Responsive image" src="img/2.jpg"></div>
+                <div class="pt-2 wrap-img-half"><img class="img-first" alt="Responsive image" src="img/3.jpg"></div>
             </div>
             <div class="col-sm ml-2 p-0 wrap-img-full">
-                <div class="wrap-img-half"><img class="img-first border-rounded-right-t" alt="Responsive image" src="4.jpg"></div>
-                <div class="pt-2 wrap-img-half"><img class="img-first border-rounded-right-b" alt="Responsive image" src="5.jpg"></div>
+                <div class="wrap-img-half"><img class="img-first border-rounded-right-t" alt="Responsive image" src="img/4.jpg"></div>
+                <div class="pt-2 wrap-img-half">
+                    <img class="img-first border-rounded-right-b" alt="Responsive image" src="img/5.jpg">
+                    <button type="button" class="btn btn-light show-all-photos btn-sm border border-dark">Show all photos</button>
+                </div>
+
             </div>
         </div>
     </div>
@@ -79,6 +43,21 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        function ready() {
+            const sk = document.getElementById('sk');
+            const cn = document.getElementById('cn');
+            sk.style.display='none';
+            cn.style.display='block';
+        }
+        document.addEventListener("DOMContentLoaded", ready);
+        // window.onload = function() {
+        //     const sk = document.getElementById('sk');
+        //     const cn = document.getElementById('cn');
+        //     sk.style.display='none';
+        //     cn.style.display='block';
+        // }
+    </script>
 </body>
 
 </html>
